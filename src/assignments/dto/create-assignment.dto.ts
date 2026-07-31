@@ -35,8 +35,15 @@ export class CreateAssignmentDto {
   @IsNotEmpty({ message: 'instructions is required' })
   instructions: string;
 
+  // Optional when no assignment file is uploaded.
+  @IsOptional()
   @IsString({ message: 'file_url must be a string' })
-  file_url: string;
+  file_url?: string;
+
+  // Backwards-compatible alias used by the frontend.
+  @IsOptional()
+  @IsString({ message: 'attachment must be a string' })
+  attachment?: string;
 
   @IsDateString()
   @IsNotEmpty({ message: 'due_date is required' })

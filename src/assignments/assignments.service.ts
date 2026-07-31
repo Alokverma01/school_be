@@ -24,21 +24,21 @@ export class AssignmentsService {
   async createAssignment(dto: CreateAssignmentDto, file?: Express.Multer.File) {
     const now = new Date();
 
-    if (!file && !dto.file_url) {
-      throw new BadRequestException('Assignment file is required');
-    }
+    // if (!file && !dto.file_url) {
+    //   throw new BadRequestException('Assignment file is required');
+    // }
 
-    let fileUrl: string | null = dto.file_url || null;
+    let fileUrl: string | null = dto.file_url || dto.attachment || null;
 
-    if (file) {
-      try {
-        const uploadResult = await this.cloudinaryService.uploadFile(file);
-        fileUrl = uploadResult.secure_url;
-      } catch (error) {
-        console.error('Cloudinary upload failed:', error);
-        throw new BadRequestException('Failed to upload assignment to Cloudinary');
-      }
-    }
+    // if (file) {
+    //   try {
+    //     const uploadResult = await this.cloudinaryService.uploadFile(file);
+    //     fileUrl = uploadResult.secure_url;
+    //   } catch (error) {
+    //     console.error('Cloudinary upload failed:', error);
+    //     throw new BadRequestException('Failed to upload assignment to Cloudinary');
+    //   }
+    // }
 
     const query = `
       INSERT INTO assignments 
@@ -194,7 +194,7 @@ export class AssignmentsService {
       throw new NotFoundException('Assignment not found');
     }
 
-    let fileUrl: string | null = (dto as any).file_url || existing[0].file_url;
+    let fileUrl: string | null = dto.file_url || dto.attachment || existing[0].file_url;
 
     if (file) {
       try {

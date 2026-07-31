@@ -35,6 +35,7 @@ async function bootstrap() {
         return new BadRequestException({
           status: false,
           message: firstError,
+          error: errors 
         });
       },
     }),

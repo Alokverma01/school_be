@@ -18,27 +18,27 @@ export class CertificateService {
   async create(dto: any, file?: Express.Multer.File) {
     const now = new Date();
 
-    if (!file && !dto.file_url) {
-      throw new BadRequestException('Certificate file is required');
-    }
+    // if (!file && !dto.file_url) {
+    //   throw new BadRequestException('Certificate file is required');
+    // }
 
     let fileUrl: string | null = dto.file_url || null;
 
-    if (file) {
-      try {
-        console.log('Starting upload for:', file.originalname);
-        const uploadResult = await this.cloudinaryService.uploadFile(file);
-        console.log('Upload success:', uploadResult.secure_url);
-        fileUrl = uploadResult.secure_url;
-      } catch (error) {
-        console.error('Cloudinary upload failed:', error);
-        throw new BadRequestException('Failed to upload certificate to Cloudinary');
-      }
-    }
+    // if (file) {
+    //   try {
+    //     console.log('Starting upload for:', file.originalname);
+    //     const uploadResult = await this.cloudinaryService.uploadFile(file);
+    //     console.log('Upload success:', uploadResult.secure_url);
+    //     fileUrl = uploadResult.secure_url;
+    //   } catch (error) { 
+    //     console.error('Cloudinary upload failed:', error);
+    //     throw new BadRequestException('Failed to upload certificate to Cloudinary');
+    //   }
+    // }
 
-    if (!fileUrl) {
-      throw new BadRequestException('Certificate file URL is required');
-    }
+    // if (!fileUrl) {
+    //   throw new BadRequestException('Certificate file URL is required');
+    // }
 
     const query = `
       INSERT INTO certificates

@@ -39,6 +39,11 @@ export class UpdateAssignmentDto {
   @IsOptional()
   file_url?: string;
 
+  // Backwards-compatible alias used by the frontend.
+  @IsOptional()
+  @IsString({ message: 'attachment must be a string' })
+  attachment?: string;
+
   @IsDateString({}, {
     message: 'due_date must be a valid date string (YYYY-MM-DD)',
   })
