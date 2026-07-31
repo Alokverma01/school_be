@@ -32,7 +32,7 @@ export class Assignment {
   @Column({ type: 'text', nullable: true })
   instructions: string;
 
-  @Column()
+  @Column({nullable: false})
   file_url: string;
 
   @Column({ name: 'due_date', type: 'date', nullable: false })
