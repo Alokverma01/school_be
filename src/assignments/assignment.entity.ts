@@ -32,8 +32,9 @@ export class Assignment {
   @Column({ type: 'text', nullable: true })
   instructions: string;
 
-  @Column({nullable: false})
-  file_url: string;
+  // Assignments may be created without an attachment.
+  @Column({ type: 'varchar', nullable: true })
+  file_url: string | null;
 
   @Column({ name: 'due_date', type: 'date', nullable: false })
   dueDate: string; // or Date if you prefer Date object
