@@ -4,7 +4,7 @@ import { AssignmentsController } from './assignments.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Assignment } from './assignment.entity';
 import { Submission } from './submission.entity';
-import { CommonModule } from 'src/common/common.module';
+import { CommonModule } from '../common/common.module';
 
 @Module({
   imports: [

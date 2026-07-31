@@ -12,7 +12,7 @@ import { DocumentsService } from './document.service';
 import { CreateDocumentDto } from './document.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { UploadedFile } from '@nestjs/common';
-import { GoogleDriveService } from 'src/common/services/google-drive.services';
+import { GoogleDriveService } from '../common/services/google-drive.services';
 
 @Controller('documents')
 export class DocumentsController {

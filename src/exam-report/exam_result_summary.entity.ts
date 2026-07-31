@@ -12,8 +12,8 @@ import { Students } from '../students/students.entity';
 import { Branches } from '../branches/branches.entity';
 import { ExamMaster } from './exam_master.entity';
 import { Subject } from '../subjects/subject.entity';
-import { Classes } from 'src/classes/classes.entity';
-import { Sections } from 'src/sections/sections.entity';
+import { Classes } from '../classes/classes.entity';
+import { Sections } from '../sections/sections.entity';
 
 // Unique
 @Unique(['exam_id', 'student_id'])

@@ -9,7 +9,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Branches } from '../branches/branches.entity';
-import { Sections } from 'src/sections/sections.entity';
+import { Sections } from '../sections/sections.entity';
 import { TeacherQualifications } from './teachers-qualifications.entity';
 
 @Entity('teachers')

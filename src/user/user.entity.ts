@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
   OneToOne,
 } from 'typeorm';
-import { Role } from 'src/role/role.entity';
+import { Role } from '../role/role.entity';
 import { UserDetails } from './user_details.entity';
 
 @Entity('users')

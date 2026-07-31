@@ -5,7 +5,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { DataSource } from 'typeorm';
-import { CloudinaryService } from 'src/common/services/cloudinary.service';
+import { CloudinaryService } from '../common/services/cloudinary.service';
 
 @Injectable()
 export class CertificateService {

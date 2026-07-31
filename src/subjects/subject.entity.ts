@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
 import { Classes } from "../classes/classes.entity";
-import { Branches } from 'src/branches/branches.entity';
+import { Branches } from '../branches/branches.entity';
 
 export enum SubjectType {
   THEORY = 'theory',

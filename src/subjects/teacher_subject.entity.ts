@@ -4,7 +4,7 @@ import { Teachers } from '../teachers/teachers.entity';
 import { Subject } from './subject.entity';
 import { Classes } from '../classes/classes.entity';
 import { Sections } from '../sections/sections.entity';
-import { Branches } from 'src/branches/branches.entity';
+import { Branches } from '../branches/branches.entity';
 
 @Entity('teacher_subjects_allocation')
 export class TeacherSubject {

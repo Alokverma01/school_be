@@ -1,4 +1,3 @@
-import { Type } from './../../node_modules/typeorm/node_modules/path-scurry/dist/commonjs/index.d';
 // import { Department } from 'src/department/department.entity';
 import {Department} from '../department/department.entity'
 import {

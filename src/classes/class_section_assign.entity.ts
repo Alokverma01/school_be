@@ -8,9 +8,9 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Classes } from './classes.entity';
-import { Sections } from 'src/sections/sections.entity';
-import { Teachers } from 'src/teachers/teachers.entity';
-import { Branches } from 'src/branches/branches.entity';
+import { Sections } from '../sections/sections.entity';
+import { Teachers } from '../teachers/teachers.entity';
+import { Branches } from '../branches/branches.entity';
 
 @Entity('class_section_assign')
 export class ClassSectionAssign {
