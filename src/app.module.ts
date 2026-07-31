@@ -83,15 +83,20 @@ import { memoryStorage } from 'multer';
   console.log('DB_NAME=', configService.get('DB_NAME'));
 
   return {
-    type: 'postgres',
-    host: configService.get<string>('DB_HOST'),
-    port: configService.get<number>('DB_PORT'),
-    username: configService.get<string>('DB_USER'),
-    password: configService.get<string>('DB_PASSWORD'),
-    database: configService.get<string>('DB_NAME'),
-    autoLoadEntities: true,
-    synchronize: true,
-  };
+  type: 'postgres',
+  host: configService.get<string>('DB_HOST'),
+  port: configService.get<number>('DB_PORT'),
+  username: configService.get<string>('DB_USER'),
+  password: configService.get<string>('DB_PASSWORD'),
+  database: configService.get<string>('DB_NAME'),
+
+  ssl: {
+    rejectUnauthorized: false,
+  },
+
+  autoLoadEntities: true,
+  synchronize: true,
+};
 },
       inject: [ConfigService],
     }),
